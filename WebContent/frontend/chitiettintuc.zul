@@ -1,0 +1,77 @@
+<zk xmlns:n="native" xmlns:x="xhtml" xmlns:zk="zk">
+	<div apply="org.zkoss.bind.BindComposer"
+						viewModel="@id('vm') @init('bkdn.cntt.model.TinTuc')">
+	<zscript><![CDATA[
+		import java.awt.*;
+		import java.awt.image.*;
+		import java.awt.geom.*;
+		import bkdn.cntt.model.TinTuc;
+		String idStr = execution.getParameter("id");
+		Long id = Long.parseLong(idStr);
+		TinTuc dt = new TinTuc();
+		dt = vm.getCore().em().find(TinTuc.class, id);
+		BufferedImage imagevar2 = new BufferedImage(80, 80, BufferedImage.TYPE_INT_ARGB);
+		//vm.setFlagChange(true);
+	]]></zscript>
+		<n:section class="page_head">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12">
+						<div class="col-sm-6">
+							<div class="page_title">
+								<n:h2>Tin tức</n:h2>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="site-search-area">
+								<n:form method="get" id="site-searchform"
+									action="#">
+									<div>
+										<textbox class="input-text s" value="@bind(vm.arg.tukhoa)" onOK="@command('cmd', notify=vm, attr='*')"
+											placeholder="Nhập từ khóa..." />
+										<button class="searchsubmit" onClick="@command('cmd', notify=vm, attr='*')">Search</button>
+									</div>
+								</n:form>
+							</div><!-- end site search -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</n:section>
+		<n:section class="content tintuc">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-sm-8 col-md-8">
+						<n:h2>
+							${dt.tieuDe }
+						</n:h2>
+						<n:span> ${dt.noiDung}</n:span>
+					</div>
+					<div class="col-sm-3 col-md-3" apply="org.zkoss.bind.BindComposer"
+							viewModel="@id('vm2') @init('bkdn.cntt.service.TinTucService')">
+			          	<div children="@load(vm2.getTinTucNe(dt.id))">
+							<template name="children" var="each">
+								<div class="blogDetail col-sm-12">
+									<div class="blogTitle">
+										<a href="/c/chitiettintuc?id=${each.id}">
+										<n:h4>${each.tieuDe}...</n:h4>
+										</a>	
+										<n:span>
+											<n:i class="fa fa-calendar"></n:i>
+											<label value="@load(each.ngayTao) @converter('formatedDate',format='MMM d,yyyy')"/>
+										</n:span>
+										<a href="#">
+											<n:i class="fa fa-user"></n:i>
+											${each.nguoiTao.hoVaTen }
+										</a>
+									</div>
+								</div>
+							</template>
+						</div>
+					</div>
+				</div>
+			</div>
+		</n:section>
+	</div>
+</zk>
