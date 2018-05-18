@@ -30,7 +30,7 @@
 		    								onOK="@command('cmd', notify=vm, attr='*')" />
 		    						</n:div>
 		    					</n:div>
-		    					<n:div class="col-md-2">
+		    					<!-- <n:div class="col-md-2">
 		    						<n:div class="form-group">
 		    							<x:label class="control-label">Trạng thái</x:label>
 		    							<combobox readonly="true" style="display:block" width="100%" placeholder="Tất cả"
@@ -42,7 +42,7 @@
 											</template>
 		    							</combobox>
 		    						</n:div>
-		    					</n:div>
+		    					</n:div> -->
 		    					<n:div class="col-md-6">
 		    						<x:label class="control-label">&#160;</x:label>
 		    						<n:div class="form-group">
@@ -78,8 +78,7 @@
 											<column label="STT" hflex="min" class="text-align-center"/>
 											<column label="Tiêu đề" width="25%" />
 											<column label="Nội dung" />
-											<column label="Ngày tạo" />
-											<column label="Trạng thái" hflex="min" class="text-align-center"/>
+											<column label="Ngày tạo" width="10%" />
 											<column label="Thao tác" width="110px" />
 										</columns>
 										<template name="model">
@@ -97,9 +96,6 @@
 												<cell>
 													<label value="@load(each.ngayTao) @converter('formatedDate',format='dd/MM/yyyy')" />
 												</cell>
-												<cell class="text-align-center">
-													<label value="@load(each.publishStatusText)"/>
-												</cell>			
 												<div class="text-align-center">
 													<x:button title="Xem"
 														class="btn btn-warning btn-xs" onClick="@command('redirectPage', zul='baidang/view.zul', vmArgs=vm, vm=item)">

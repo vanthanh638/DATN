@@ -28,19 +28,6 @@
 		    					</n:div>
 		    					<n:div class="col-md-2">
 		    						<n:div class="form-group">
-		    							<x:label class="control-label">Trạng thái</x:label>
-		    							<combobox readonly="true" style="display:block" width="100%" placeholder="Tất cả"
-		    								model="@load(entry.listPublishStatus)" 
-		    								value="@load(each.value eq null ? 'Tất cả' : each.value)"
-		    								selectedItem="@bind(vm.arg.publishstatus)" >
-		    								<template name="model">
-												<comboitem value="@load(each.key)" label="@load(each.value eq '        ' ? 'Tất cả' : each.value)" />
-											</template>
-		    							</combobox>
-		    						</n:div>
-		    					</n:div>
-		    					<n:div class="col-md-2">
-		    						<n:div class="form-group">
 		    							<x:label class="control-label">Trạng thái đề nghị</x:label>
 		    							<combobox readonly="true" style="display:block" width="100%" placeholder="Tất cả"
 		    								model="@load(vm.listStatus)" 
@@ -88,7 +75,6 @@
 											<column label="Người gửi" width="25%" />
 											<column label="Người nhận" />
 											<column label="Trạng thái đề nghị" width="25%" />
-											<column label="Trạng thái" hflex="min" class="text-align-center"/>
 											<column label="Thao tác" width="110px" />
 										</columns>
 										<template name="model">
@@ -108,9 +94,6 @@
 													<label zclass="@load(each.style)" value="@load(each.trangThaiDeNghi)" if="${each.trangThaiDeNghi == 'rejected'}"/>
 												</cell>
 												
-												<cell class="text-align-center">
-													<label value="@load(each.publishStatusText)"/>
-												</cell>			
 												<div class="text-align-center">
 													<x:button title="Xem"
 														class="btn btn-warning btn-xs" onClick="@command('redirectPage', zul='denghi/view.zul', vmArgs=vm, vm=item)">

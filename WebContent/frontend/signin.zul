@@ -80,9 +80,9 @@
 				<n:form action="#" method="post" class="form"
 					role="form">
 					<div class="login-field">
-						<x:label>Email</x:label>
+						<x:label>Tài khoản</x:label>
 						<textbox type="text" id="username" focus="true"
-							class="form-control username" placeholder="Nhập email của bạn"
+							class="form-control username" placeholder="Nhập tài khoản của bạn"
 							onOK="@command('login',email=username.getValue(),password=password.getValue(),role='')">
 						</textbox>
 						<n:span class="icon-username"></n:span>

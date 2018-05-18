@@ -161,4 +161,10 @@ public class NhanVienService extends BasicService<NhanVien>{
         }
         return null;
     }
+    
+//    public List<NhanVien> getNguoiDung(){
+////        JPAQuery<NhanVien> q = getTargetQuery();
+////        q.where(QNhanVien.nhanVien.chucVu)
+////        List<NhanVien> listNguoiDung = 
+//    }
 }

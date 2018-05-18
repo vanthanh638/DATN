@@ -39,7 +39,7 @@
 		    							</combobox>
 		    						</n:div>
 		    					</n:div>
-		    					<n:div class="col-md-2">
+		    					<!-- <n:div class="col-md-2">
 		    						<n:div class="form-group">
 		    							<x:label class="control-label">Trạng thái</x:label>
 		    							<combobox readonly="true" style="display:block" width="100%" placeholder="Tất cả"
@@ -51,7 +51,7 @@
 											</template>
 		    							</combobox>
 		    						</n:div>
-		    					</n:div>
+		    					</n:div> -->
 		    					<n:div class="col-md-4">
 		    						<x:label class="control-label">&#160;</x:label>
 		    						<n:div class="form-group">
@@ -87,7 +87,6 @@
 											<column label="STT" hflex="min" class="text-align-center"/>
 											<column label="Tên nhóm máu" width="25%" />
 											<column label="Loại máu" width="25%" />
-											<column label="Trạng thái" hflex="min" class="text-align-center"/>
 											<column label="Thao tác" width="110px" />
 										</columns>
 										<template name="model">
@@ -102,9 +101,6 @@
 												<cell>
 													<label value="@load(each.loaiMau.tenLoai)" />
 												</cell>
-												<cell class="text-align-center">
-													<label value="@load(each.publishStatusText)"/>
-												</cell>			
 												<div class="text-align-center">
 													<x:button title="Xem"
 														class="btn btn-warning btn-xs" onClick="@command('redirectPage', zul='nhommau/view.zul', vmArgs=vm, vm=item)">

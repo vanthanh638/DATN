@@ -106,13 +106,23 @@
 						</div>
 					</div>
 					<div class="col-md-12">
-						<div class="form-group">
-							<x:label>Tên cơ quan</x:label>
-							<textbox width="100%" maxlength="255"
-								class="form-control" value="@bind(nv.tenCoQuan)" />
+						<div class="form-group" apply="org.zkoss.bind.BindComposer"
+							viewModel="@id('nvs') @init('bkdn.cntt.service.NhomMauService')">
+							<x:label>
+								Nhóm máu của bạn
+							</x:label>
+								<combobox style="display:block;"
+									model="@load(nvs.tenNhomMau.fetch())"
+									selectedItem="@bind(nv.nhomMau)">
+									<template name="model">
+										<comboitem
+											label="@load(each.tenNhom)" />
+									</template>
+								</combobox>
+							
 						</div>
 					</div>
-					<div class="col-md-12" >
+					<!-- <div class="col-md-12" >
 						<listbox model="@bind(vm.vaiTroService.vaiTroNotAdmin.fetch())"
 							selectedItems="@bind(nv.vaiTros)"
 							multiple="false" checkmark="true">
@@ -125,7 +135,7 @@
 								</listitem>
 							</template>
 						</listbox>
-					</div>
+					</div> -->
 					<div class="col-md-12">
 						<x:button style="margin-right: 10px;" class="btn btn-default pull-right"
 							onClick="@command('saveRegister', vm=nv, mk2 = nv.matKhau2)">

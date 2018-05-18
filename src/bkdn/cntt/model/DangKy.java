@@ -210,7 +210,7 @@ public class DangKy extends Asset<DangKy>{
     	DangKy dkCu = getCore().getNhanVienService().getDangKy(nhanVien).fetchOne();
 		Calendar c1 = Calendar.getInstance();
 	    Calendar c2 = Calendar.getInstance();
-		
+		System.out.println(ctr.getTenChuongTrinh());
 		if(getThoiGianVuaHien() != null && getThoiGianSapHien() != null){
 			System.out.println("thoiGianVuaHien"+thoiGianVuaHien);
 			c2.setTime(getThoiGianVuaHien());

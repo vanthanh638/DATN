@@ -39,12 +39,12 @@
 	<n:section class="content blog" zk:if="${nhanVien != null}">
 		<div class="container">
 			<div class="row" zk:if="${id == null}">
-				<div class="col-lg-4 col-md-4 col-sm-4"
+				<div class="col-lg-6 col-md-6 col-sm-6"
 					apply="org.zkoss.bind.BindComposer"
 					viewModel="@id('vm') @init('bkdn.cntt.model.BaiDang')" >
 					<include src="/frontend/taobaidang.zul" />
 				</div>
-				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8" apply="org.zkoss.bind.BindComposer"
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" apply="org.zkoss.bind.BindComposer"
 						viewModel="@id('vm') @init(nhanVien)">
 					<include src="/frontend/baidangcanhan.zul" />
 				</div>

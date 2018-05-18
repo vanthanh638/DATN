@@ -39,19 +39,6 @@
 		    							</combobox>
 		    						</n:div>
 		    					</n:div>
-		    					<n:div class="col-md-2">
-		    						<n:div class="form-group">
-		    							<x:label class="control-label">Trạng thái</x:label>
-		    							<combobox readonly="true" style="display:block" width="100%" placeholder="Tất cả"
-		    								model="@load(entry.listPublishStatus)" 
-		    								value="@load(each.value eq null ? 'Tất cả' : each.value)"
-		    								selectedItem="@bind(vm.arg.publishstatus)" >
-		    								<template name="model">
-												<comboitem value="@load(each.key)" label="@load(each.value eq '        ' ? 'Tất cả' : each.value)" />
-											</template>
-		    							</combobox>
-		    						</n:div>
-		    					</n:div>
 		    					<n:div class="col-md-4">
 		    						<x:label class="control-label">&#160;</x:label>
 		    						<n:div class="form-group">
@@ -75,10 +62,9 @@
 										emptyMessage="Không có danh sách kho máu">
 										<columns>
 											<column label="STT" hflex="min" class="text-align-center"/>
-											<column label="Tên nhóm máu" width="25%" />
+											<column label="Tên nhóm máu"/>
 											<column label="Loại máu" />
-											<column label="Thể tích" />
-											<column label="Trạng thái" hflex="min" class="text-align-center"/>
+											<column label="Thể tích" width="20%"/>
 										</columns>
 										<template name="model">
 											<row apply="org.zkoss.bind.BindComposer"
@@ -95,10 +81,6 @@
 												<cell>
 													<label value="@load(each.theTich)" />
 												</cell>
-												
-												<cell class="text-align-center">
-													<label value="@load(each.publishStatusText)"/>
-												</cell>		
 											</row>
 										</template>
 									</grid>

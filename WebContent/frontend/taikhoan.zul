@@ -102,18 +102,6 @@
 							value="@load(vmsgs[self.previousSibling])" />
 					</div>
 				</div>
-				<div class="form-group form-doi-tuong">
-					<x:label class="col-md-4 col-sm-4">
-						Tên cơ quan
-					</x:label>
-					<div class="col-md-8 col-sm-8">
-						<textbox class="form-control" maxlength="255"
-							width="99%"
-							value="@load(vm2.tenCoQuan) @save(vm2.tenCoQuan, before='saveNguoiDung') " />
-						<label class="error"
-							value="@load(vmsgs[self.previousSibling])" />
-					</div>
-				</div>
 				<div class="form-group form-doi-tuong"
 					apply="org.zkoss.bind.BindComposer"
 					viewModel="@id('vmm') @init('bkdn.cntt.service.DangKyService')"

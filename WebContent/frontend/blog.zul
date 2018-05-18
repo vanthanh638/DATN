@@ -35,10 +35,12 @@
 	<n:section class="content blog">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-8 col-md-8">
+				<div class="col-sm-6 col-md-6">
 					<include src="/frontend/listbaidang.zul" />
 				</div>
-				<div class="col-sm-3 col-md-3" apply="org.zkoss.bind.BindComposer"
+				<div class="col-sm-2 col-md-2">
+				</div>
+				<div class="col-sm-4 col-md-4" apply="org.zkoss.bind.BindComposer"
 						viewModel="@id('vm2') @init('bkdn.cntt.service.TinTucService')">
                     <include src="/frontend/tintuc.zul" />
 				</div>

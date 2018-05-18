@@ -37,11 +37,9 @@
 							</a>
 						</n:span>
 					</n:h5>
-					<div apply="org.zkoss.bind.BindComposer"
-						viewModel="@id('nm') @init('bkdn.cntt.model.NhomMau')"
-						style="margin-left:15px;" >
-						<n:span children="@load(each.nhomMaus)">Nhóm máu cần 
-							<template name="children" var="nhomMau">
+					<div>
+						<n:span model="@load(each.nhomMaus)">Nhóm máu cần 
+							<template name="model" var="nhomMau">
 								<label value="@load(nhomMau.tenNhom)" />
 							</template>
 						</n:span>

@@ -677,3 +677,49 @@ a:hover {
 .baocao-highlight {
 	background-color: #7ed4af;
 }
+
+.thong-ke-table {
+	padding: 15px;
+}
+
+.thong-ke-table table {
+	width: 100%;
+}
+
+.thong-ke-table .center {
+	text-align: center;
+}
+
+.thong-ke-table table tr {
+	
+}
+
+.thong-ke-table td {
+	padding: 5px;
+    border: 1px solid;
+}
+
+.thong-ke-detail {
+	background: #fff;
+    margin-bottom: 30px;
+	box-shadow:0 0 8px 0 rgba(118,151,178,0.24);
+}
+
+.thong-ke-detail-header {
+	padding: 15px 20px;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.thong-ke-detail-content2 {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.thong-ke-detail-header span {
+	font-family:SourceSansPro-Bold !important;
+	font-size:16px;
+	color:#4e546c;
+	letter-spacing:0;
+	line-height:24px;
+	text-transform: uppercase;
+}

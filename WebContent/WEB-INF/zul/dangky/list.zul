@@ -26,19 +26,6 @@
 		    								onOK="@command('cmd', notify=vm, attr='*')" />
 		    						</n:div>
 		    					</n:div>
-		    					<n:div class="col-md-2">
-		    						<n:div class="form-group">
-		    							<x:label class="control-label">Trạng thái</x:label>
-		    							<combobox readonly="true" style="display:block" width="100%" placeholder="Tất cả"
-		    								model="@load(entry.listPublishStatus)" 
-		    								value="@load(each.value eq null ? 'Tất cả' : each.value)"
-		    								selectedItem="@bind(vm.arg.publishstatus)" >
-		    								<template name="model">
-												<comboitem value="@load(each.key)" label="@load(each.value eq '        ' ? 'Tất cả' : each.value)" />
-											</template>
-		    							</combobox>
-		    						</n:div>
-		    					</n:div>
 		    					<n:div class="col-md-6">
 		    						<x:label class="control-label">&#160;</x:label>
 		    						<n:div class="form-group">
@@ -76,7 +63,6 @@
 											<column label="Số điện thoại" width="25%" />
 											<column label="Nhóm Máu" />
 											<column label="Chương trình" />
-											<column label="Trạng thái" hflex="min" class="text-align-center"/>
 											<column label="Thao tác" width="110px" />
 										</columns>
 										<template name="model">
@@ -97,9 +83,6 @@
 												<cell>
 													<label value="@load(each.chuongTrinhHienMau.tenChuongTrinh)" />
 												</cell>
-												<cell class="text-align-center">
-													<label value="@load(each.publishStatusText)"/>
-												</cell>			
 												<div class="text-align-center">
 													<x:button title="Xem"
 														class="btn btn-warning btn-xs" onClick="@command('redirectPage', zul='dangky/view.zul', vmArgs=vm, vm=item)">
