@@ -2,7 +2,7 @@
 	id="wdn" border="normal" mode="modal" action="show: slideIn"
 	contentStyle="overflow:auto;" closable="true" title="${arg.save}"
 	onClose="@command('invokeGG', notify=vmArgs, detach=wdn, attr='targetQuery')"
-	whatever="@load(false, after='saveDonVi') @converter('vn.cal.service.DetachConverter')"
+	whatever="@load(false, after='saveDonVi') @converter('bkdn.cntt.service.DetachConverter')"
 	viewModel="@id('vm') @init(arg.model)" validationMessages="@id('vmsgs')" width="50%">
 	<zscript>
 		vmArgs = arg.get("vmArgs");
@@ -14,7 +14,7 @@
 			<div class="form-group">
 				<x:label>Tên danh mục<n:small class="required"> *</n:small></x:label>
 				<textbox class="form-control" width="100%" maxlength="255"
-					value="@bind(vm.name) @save(vm.name, before={'saveDanhMuc'}) @validator('vn.cal.core.BaseValid', constraint='no empty')" />
+					value="@bind(vm.name) @save(vm.name, before={'saveDanhMuc'}) @validator('bkdn.cntt.core.BaseValid', constraint='no empty')" />
 				<label class="error" value="@load(vmsgs[self.previousSibling])" />
 			</div>
 		</div>

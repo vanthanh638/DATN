@@ -2,7 +2,7 @@
 	id="wdn" border="normal" mode="modal" action="show: slideIn"
 	contentStyle="overflow:auto;" closable="true" title="${arg.save}"
 	onClose="@command('invokeGG', notify=vmArgs, detach=wdn, attr='targetQuery')"
-	whatever="@load(false, after='saveDonVi') @converter('vn.cal.service.DetachConverter')"
+	whatever="@load(false, after='saveDonVi') @converter('bkdn.cntt.service.DetachConverter')"
 	viewModel="@id('vm') @init(arg.model)" validationMessages="@id('vmsgs')" width="50%">
 	
 	<style>
@@ -34,7 +34,7 @@
 			<div class="form-group">
 				<x:label>Tiêu đề<n:small class="required"> *</n:small></x:label>
 				<textbox class="form-control" width="100%" maxlength="255"
-					value="@bind(vm.tieuDe) @save(vm.tieuDe, before={'saveBaiDang'}) @validator('vn.cal.core.BaseValid', constraint='no empty')" />
+					value="@bind(vm.tieuDe) @save(vm.tieuDe, before={'saveBaiDang'}) @validator('bkdn.cntt.core.BaseValid', constraint='no empty')" />
 				<label class="error" value="@load(vmsgs[self.previousSibling])" />
 			</div>
 		</div>
@@ -46,7 +46,7 @@
 					height="600px"
 					filebrowserBrowseUrl="${labels.filestore.files}"
 					customConfigurationsPath="/js/configWYSIYG.js"
-					value="@bind(vm.noiDung) @validator('vn.cal.core.BaseValid', constraint='no empty')" />
+					value="@bind(vm.noiDung) @validator('bkdn.cntt.core.BaseValid', constraint='no empty')" />
 			</div>
 		</div>
 	

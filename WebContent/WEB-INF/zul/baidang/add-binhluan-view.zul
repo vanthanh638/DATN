@@ -2,7 +2,7 @@
 	id="w" border="normal" mode="modal" action="show: slideIn"
 	contentStyle="overflow:auto;" closable="true" title="${arg.save}"
 	onClose="@command('invokeGG', notify=vmArgs, detach=w, attr='targetQuery')"
-	whatever="@load(false, after='saveDonVi') @converter('vn.cal.service.DetachConverter')"
+	whatever="@load(false, after='saveDonVi') @converter('bkdn.cntt.service.DetachConverter')"
 	viewModel="@id('vm') @init(arg.model)" validationMessages="@id('vmsgs')" width="40%">
 	<zscript>
 		vmArgs = arg.get("vmArgs");
@@ -14,7 +14,7 @@
 		<div class="col-md-12">
 			<div class="form-group">
 				<x:label>Nội dung</x:label>
-				<textbox width="100%" rows="5" maxlength="255" class="form-control" value="@bind(vm.noiDung) @validator('vn.cal.core.BaseValid', constraint='no empty')" />
+				<textbox width="100%" rows="5" maxlength="255" class="form-control" value="@bind(vm.noiDung) @validator('bkdn.cntt.core.BaseValid', constraint='no empty')" />
 			</div>
 		</div>
 		<div class="col-md-12">

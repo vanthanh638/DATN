@@ -2,7 +2,7 @@
 	id="wdn" border="normal" mode="modal" action="show: slideIn"
 	contentStyle="overflow:auto;" closable="true" title="${arg.save}"
 	onClose="@command('invokeGG', notify=vmArgs, detach=wdn, attr='targetQuery')"
-	whatever="@load(false, after='saveDonVi') @converter('vn.cal.service.DetachConverter')"
+	whatever="@load(false, after='saveDonVi') @converter('bkdn.cntt.service.DetachConverter')"
 	viewModel="@id('vm') @init(arg.model)" validationMessages="@id('vmsgs')" width="50%">
 	<zscript>
 		vmArgs = arg.get("vmArgs");

@@ -37,13 +37,6 @@
 							</a>
 						</n:span>
 					</n:h5>
-					<div>
-						<n:span model="@load(each.nhomMaus)">Nhóm máu cần 
-							<template name="model" var="nhomMau">
-								<label value="@load(nhomMau.tenNhom)" />
-							</template>
-						</n:span>
-					</div>
 				</div>
 				<div class="panel-body">
 					<n:p>${each.noiDung}</n:p>

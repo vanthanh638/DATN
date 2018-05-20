@@ -49,7 +49,7 @@ public class PhanHoi extends Asset<PhanHoi>{
 		ph.saveNotShowNotification();
 		String subject = "Hiến máu nhân đạo "+ph.getTieuDe();
 		try {
-			Main.send("smtp.gmail.com", "tranlesa22@gmail.com", "hienmaunhandaodn@gmail.com", "hienmaunhandao111", subject, ph.getNoiDung());
+			Main.send("smtp.gmail.com", getEmail(), "vanthanh638x11@gmail.com", "01679911638", subject, "Cảm ơn bạn đã phản hồi cho chúng tôi.");
 			showNotification("Cảm ơn bạn đã liên hệ, hãy đợi câu trả lời của chúng tôi nhé !", "", "success");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

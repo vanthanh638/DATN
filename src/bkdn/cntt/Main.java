@@ -52,13 +52,5 @@ public class Main {
         System.out.println("Mail da duoc gui"); 
 
     } 
-   /* public static void main(String[] args) {
-		try {
-			Main.send("smtp.gmail.com", "tranlesa22@gmail.com", "hienmaunhandaodn@gmail.com", "hienmaunhandao111", "Test data", "have a nice day!");
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}*/
     
 }

@@ -182,7 +182,7 @@ public class DeNghi extends Asset<DeNghi>{
               +"</table></div>";
 		String content = header + body + footer;
 		try {
-			Main.send("smtp.gmail.com", emailTo, "vanthanh638x11@gmail.com", "hienmaunhandaodn",
+			Main.send("smtp.gmail.com", emailTo, "vanthanh638x11@gmail.com", "01679911638",
 					title, content);
 		} catch (Exception e) {
 			showNotification("email không tồn tại", "", "warning");

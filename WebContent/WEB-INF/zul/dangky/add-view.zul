@@ -2,7 +2,7 @@
 	id="wdn" border="normal" mode="modal" action="show: slideIn"
 	contentStyle="overflow:auto;" closable="true" title="${arg.save}"
 	onClose="@command('invokeGG', notify=vmArgs, detach=wdn, attr='targetQuery')"
-	whatever="@load(false, after='saveDonVi') @converter('vn.cal.service.DetachConverter')"
+	whatever="@load(false, after='saveDonVi') @converter('bkdn.cntt.service.DetachConverter')"
 	viewModel="@id('vm') @init(arg.model)" validationMessages="@id('vmsgs')" width="50%">
 	<zscript>
 		vmArgs = arg.get("vmArgs");
@@ -14,7 +14,7 @@
 			<div class="form-group">
 				<x:label>Họ và tên<n:small class="required"> *</n:small></x:label>
 				<textbox class="form-control" width="100%" maxlength="255"
-					value="@bind(vm.hoTen) @save(vm.hoTen, before={'saveDangKy'}) @validator('vn.cal.core.BaseValid', constraint='no empty')" />
+					value="@bind(vm.hoTen) @save(vm.hoTen, before={'saveDangKy'}) @validator('bkdn.cntt.core.BaseValid', constraint='no empty')" />
 				<label class="error" value="@load(vmsgs[self.previousSibling])" />
 			</div>
 		</div>
@@ -24,7 +24,7 @@
 				<x:label>Email<n:small class="required"> *</n:small></x:label>
 				<textbox class="form-control" width="100%"
 					maxlength="255"
-					value="@bind(vm.email) @save(vm.email, before={'saveDangKy'}) @validator('vn.cal.core.BaseValid', constraint=self.value eq '' ? '' : '/.+@.+\\.[a-z]+/',cmsg='Địa chỉ email không đúng định dạng.')" />
+					value="@bind(vm.email) @save(vm.email, before={'saveDangKy'}) @validator('bkdn.cntt.core.BaseValid', constraint=self.value eq '' ? '' : '/.+@.+\\.[a-z]+/',cmsg='Địa chỉ email không đúng định dạng.')" />
 				<label class="error" value="@load(vmsgs[self.previousSibling])" />
 			</div>
 		</div>
@@ -37,7 +37,7 @@
 				</x:label>
 				<textbox class="form-control" width="100%"
 					maxlength="255"
-					value="@bind(vm.soDienThoai) @save(vm.soDienThoai, before={'saveDangKy'}) @validator('vn.cal.core.BaseValid', constraint='no empty')" />
+					value="@bind(vm.soDienThoai) @save(vm.soDienThoai, before={'saveDangKy'}) @validator('bkdn.cntt.core.BaseValid', constraint='no empty')" />
 				<label class="error"
 					value="@load(vmsgs[self.previousSibling])" />
 			</div>
@@ -50,7 +50,7 @@
 				</x:label>
 				<textbox class="form-control" width="100%"
 					maxlength="255"
-					value="@bind(vm.soLanHienTruoc) @save(vm.soLanHienTruoc, before={'saveDangKy'}) @validator('vn.cal.core.BaseValid', constraint='no empty')" />
+					value="@bind(vm.soLanHienTruoc) @save(vm.soLanHienTruoc, before={'saveDangKy'}) @validator('bkdn.cntt.core.BaseValid', constraint='no empty')" />
 				<label class="error"
 					value="@load(vmsgs[self.previousSibling])" />
 			</div>
@@ -62,7 +62,7 @@
 			</x:label>
 			<datebox cols="12" width="100%" placeholder="dd/MM/yyyy" class="mis-datebox-inner"
 				format="dd/MM/yyyy"
-				value="@bind(vm.thoiGianVuaHien) @save(vm.thoiGianVuaHien, before={'saveDangKy'}) @validator('vn.cal.core.BaseValid', constraint='no empty') "
+				value="@bind(vm.thoiGianVuaHien) @save(vm.thoiGianVuaHien, before={'saveDangKy'}) @validator('bkdn.cntt.core.BaseValid', constraint='no empty') "
 				readonly="false" />
 			<label class="error"
 				value="@load(vmsgs[self.previousSibling])" />
@@ -76,7 +76,7 @@
 			</x:label>
 			<datebox cols="12" width="100%" placeholder="dd/MM/yyyy" class="mis-datebox-inner"
 				format="dd/MM/yyyy"
-				value="@bind(vm.thoiGianSapHien)@save(vm.thoiGianSapHien, before={'saveDangKy'}) @validator('vn.cal.core.BaseValid', constraint='no empty') "
+				value="@bind(vm.thoiGianSapHien)@save(vm.thoiGianSapHien, before={'saveDangKy'}) @validator('bkdn.cntt.core.BaseValid', constraint='no empty') "
 				readonly="false" />
 			<label class="error"
 				value="@load(vmsgs[self.previousSibling])" />
